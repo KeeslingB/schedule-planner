@@ -1,7 +1,48 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+var currentTime = dayjs();
+$('hour').text(currentTime.format('MMM D, YYYY'));
+
+
+
+
+
+console.log(currentTime.$d);
 $(function () {
+
+});
+
+// things changing 1 hour, 2 class of time, 
+const newBlock = $(`
+<div id="hour-${i}" class="row ${currentClass}">
+<div class="col-2 col-md-1 hour text-center py-3">9AM</div>
+<textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+<button class="btn saveBtn col-2 col-md-1" aria-label="save">
+  <i class="fas fa-save" aria-hidden="true"></i>
+</button>
+</div>`);
+
+for (var i = 9; i > 17; i ++){
+  
+}
+
+currentClass = dayjs;
+
+console.log(newBlock);
+
+
+
+
+// localStorage.setItem('');   -for when i get the cards done
+
+
+
+
+//what does each row have to do:
+//-Display current hour (9am 10am..)
+//-indicate if the row is past-present-future
+// display whatever entry is availablle for that time block
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -20,4 +61,3 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});

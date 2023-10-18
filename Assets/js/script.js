@@ -1,30 +1,70 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 var currentTime = dayjs();
-$('p.currentDay').text(currentTime.$d);
+var $currentTime = $('p.currentDay');   //will be used to compare each row.
+var $row = $('div.row');   //class will change based on current time then will trigger respective css styles.
+let $text = $('textarea.description');  //used for storing input into local storage.
+TimeHour = document.getElementById(`hour-{i}`); //most likely not targeting anything atm.
 
 
+$currentTime.text(dayjs());
 
 
-// $('textarea.description').text('get pennies');
-
-let val = $('textarea.description');
-// val = '';
+// text.innerHTML = localStorage.getItem($text);
+// $text.textContent = text;
 // let val_serialized = JSON.stringify(val);
 $('i.fas').click(function(){
-  localStorage.setItem('todo', JSON.stringify(val));
+  localStorage.setItem('todo', JSON.stringify($text));
+  textL = JSON.parse(localStorage.getItem('text'));
   // localStorage.setItem(textarea,'textarea');
   // alert( event.currentTarget === this );
   console.log(localStorage);
 });
-
-// val(val);
-
-
 // localStorage.setItem('data', JSON.stringify(data));
 
-// console.log(localStorage);
+var currentClass = 'past';
+const hourName = '9am';
+var hourData = '';
+
+
+
+
+  for (var i = 9; i > 17; i++){
+    var cards = $(`
+     <div id="hour-${i}" class="row time-block ${currentClass}">
+    <div class="col-2 col-md-1 hour text-center py-3">${hourData}</div>
+    <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+    <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+      <i class="fas fa-save" aria-hidden="true"></i>
+    </button>
+  </div>
+  `);
+  document.body.append($row);
+  }
+
+
+
+
+// function getScheduleTime(projectTime) {
+//   var $row = $('.row').first();
+//   var $time = $row.find('.hour');
+//   var timeString = $time.text();
+//   var time = dayjs(timeString, 'h:mm A');
+
+//   if (dayjs().isSame(time, 'minute')) {
+//     $row.addClass('present');
+//   } else if (dayjs().isBefore(time, 'minute')) {
+//     $row.addClass('future');
+//   } else {
+//     $row.addClass('past');
+//   }
+// }
+
+
+
+
+
+
+
+
 
 // things changing 1 hour, 2 class of time, 
 // const newBlock = $(`
@@ -35,6 +75,11 @@ $('i.fas').click(function(){
 //   <i class="fas fa-save" aria-hidden="true"></i>
 // </button>
 // </div>`);
+
+
+
+
+
 
 // for (var i = 9; i > 17; i ++){
   

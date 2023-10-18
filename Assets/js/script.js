@@ -2,34 +2,47 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var currentTime = dayjs();
-$('hour').text(currentTime.format('MMM D, YYYY'));
+$('p.currentDay').text(currentTime.$d);
 
 
 
 
+// $('textarea.description').text('get pennies');
 
-console.log(currentTime.$d);
-$(function () {
-
+let val = $('textarea.description');
+// val = '';
+// let val_serialized = JSON.stringify(val);
+$('i.fas').click(function(){
+  localStorage.setItem('todo', JSON.stringify(val));
+  // localStorage.setItem(textarea,'textarea');
+  // alert( event.currentTarget === this );
+  console.log(localStorage);
 });
 
+// val(val);
+
+
+// localStorage.setItem('data', JSON.stringify(data));
+
+// console.log(localStorage);
+
 // things changing 1 hour, 2 class of time, 
-const newBlock = $(`
-<div id="hour-${i}" class="row ${currentClass}">
-<div class="col-2 col-md-1 hour text-center py-3">9AM</div>
-<textarea class="col-8 col-md-10 description" rows="3"> </textarea>
-<button class="btn saveBtn col-2 col-md-1" aria-label="save">
-  <i class="fas fa-save" aria-hidden="true"></i>
-</button>
-</div>`);
+// const newBlock = $(`
+// <div id="hour-${i}" class="row ${currentClass}">
+// <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
+// <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+// <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+//   <i class="fas fa-save" aria-hidden="true"></i>
+// </button>
+// </div>`);
 
-for (var i = 9; i > 17; i ++){
+// for (var i = 9; i > 17; i ++){
   
-}
+// }
 
-currentClass = dayjs;
+// currentClass = dayjs;
 
-console.log(newBlock);
+// console.log(newBlock);
 
 
 

@@ -7,14 +7,14 @@ var $hour = $('div.hour');
 $currentTime.text(currentTime);
 
 let scheduleCards = $('.container-lg');
-const localStorage = $('px-5');
-const saveTask = $('i.fas');
+var localStorage = $('px-5');
+var saveTask = $('i.fas');
 
-
+timeclasses = '';
 
 for(var i = 9; i < 13; i++){
 let newBlockAm =`
-<div id="hour-9  root" class="row time-block past">
+<div id="hour-9  root" class="row time-block ">
 <div class="col-2 col-md-1 hour text-center py-3">${i}AM</div>
 <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
 <button class="btn saveBtn col-2 col-md-1" aria-label="save">
@@ -23,12 +23,14 @@ let newBlockAm =`
 </div>`;
 scheduleCards.append(newBlockAm);
 $hour.text(i);
-console.log($hour); //think think think
+// console.log(i);
 };
+
+
 
 for(var i = 1; i < 6; i++){
   let newBlockPm =`
-  <div id="hour-9  root" class="row time-block past">
+  <div id="hour-9  root" class="row time-block ">
   <div class="col-2 col-md-1 hour text-center py-3">${i}PM</div>
   <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
   <button class="btn saveBtn col-2 col-md-1" aria-label="save">
@@ -37,12 +39,13 @@ for(var i = 1; i < 6; i++){
   </div>`;
   scheduleCards.append(newBlockPm);
   $hour.text(i);
-  $cards.toggleClass('past');
+  $cards.addClass('present');
   };
   
 
 
 
+// still figuiring out how to compare numbers to time inorder to add classes for css.
 
 
 
@@ -65,18 +68,6 @@ saveTask.click(function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // text.innerHTML = localStorage.getItem($text);
 // $text.textContent = text;
 // let val_serialized = JSON.stringify(val);
@@ -93,79 +84,12 @@ saveTask.click(function(){
 
 
 
-
-
-
-
-
-
-
-// var  root = $('#root');
-
-// var divContainer = $('<div>');
-// divContainer.addClass('row');
-
-// var divHour = $('<div>');
-// divHour.addClass('hour');
-// divHour.text('10AM');
-
-//  var textL = $('<textarea>');
-//  textL.addClass('description');
-
-//  var btnIcon = $('<button>');
-//  btnIcon.addClass('btn');
-
-//  var saveT = $('<i>');
-//  saveT.addClass('fa-save');
-
-// root.append(divHour);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // localStorage.setItem('todo', JSON.stringify($text));
   // var textL = JSON.parse(localStorage.getItem('todo'));
   // localStorage.setItem(textarea,'textarea');
   // alert( event.currentTarget === this );
   // console.log(textL);
   // localStorage.setItem('');   -for when i get the cards done
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
 
 
 

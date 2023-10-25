@@ -18,6 +18,9 @@ Javascript: https://www.w3schools.com/js/  --
 
 Github Link : https://github.com/KeeslingB/schedule-planner
 
-Project Deployed Page : 
+Project Deployed Page : https://keeslingb.github.io/schedule-planner/
 
 Project Img :
+
+ ![](./Assets/project-img.png)
+
